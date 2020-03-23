@@ -1,0 +1,10 @@
+﻿[*.cs]
+
+# CS0168: Variable is declared but never used
+dotnet_diagnostic.CS0168.severity = silent
+
+# IDE0055: Fix formatting
+dotnet_diagnostic.IDE0055.severity = suggestion
+
+# IDE0018: Inline variable declaration
+csharp_style_inlined_variable_declaration = true:suggestion
