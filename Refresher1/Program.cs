@@ -23,18 +23,22 @@ namespace BuildASynth
 
             int oscillators;
 
-            while (!int.TryParse(Result, result: out oscillators))
-
+            
+            bool isOscillatorsValid = false;
+            while (!isOscillatorsValid)
             {
-                Console.WriteLine("Not a valid optioin, try again.");
-                Result = Console.ReadLine();
-            }
-
-            while (oscillators >= 5)
-            {
-                Console.WriteLine("Please choose fewer");
-                Console.ReadLine();
-
+                OCSs = Console.ReadLine();
+                if (!int.TryParse(OCSs, out oscillators))
+                {
+                    Console.WriteLine("Not a valid option, try again.");
+                    continue;
+                }
+                if (oscillators >= 5)
+                {
+                    Console.WriteLine("Please choose fewer");
+                    continue;
+                }
+                isOscillatorsValid = true;
             }
 
             Console.WriteLine("Pick some Filters: ");
